@@ -101,7 +101,7 @@ function toggleHeader() {
         collapseHeaderItems.style.width = "60vw"
         collapseBtn.classList.remove("bi-list", "primary-text-color")
         collapseBtn.classList.add("bi-x", "tw-text-white")
-        document.querySelector('#logoheader').src = "assets/balance.png";
+        document.querySelector('#logoheader').src = "assets/download.png";
         isHeaderCollapsed = false
 
         setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 1)
@@ -111,7 +111,7 @@ function toggleHeader() {
         collapseHeaderItems.style.width = "0vw"
         collapseBtn.classList.remove("bi-x", "tw-text-white")
         collapseBtn.classList.add("bi-list", headerWhiteBg ? "primary-text-color" : null)
-        document.querySelector('#logoheader').src = "assets/balance-2.png";
+        document.querySelector('#logoheader').src = "assets/download.png";
         isHeaderCollapsed = true
         window.removeEventListener("click", onHeaderClickOutside)
 
