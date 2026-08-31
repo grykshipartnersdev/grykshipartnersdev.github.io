@@ -12,7 +12,7 @@
 <!-- <meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=542ddc4d-9d6c-4ecd-95a2-6d7803976c65"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Grykshi & Partners | Studio Ligjore & Këshillim</title>
+    <title data-i18n="metaTitle">Grykshi & Partners | Studio Ligjore & Këshillim</title>
     <meta name="description" content="Studio ligjore e specializuar në Tiranë që ofron shërbime juridike gjithëpërfshirëse në të drejtën tregtare, pasuritë e paluajtshme, përfaqësimin gjyqësor, punën dhe rregullatorin.">
 
     <meta name="twitter:title" content="Grykshi & Partners | Studio Ligjore & Këshillim">
@@ -30,9 +30,36 @@
 
     <link rel="stylesheet" href="css/tailwind-build.css">
     <link rel="stylesheet" href="css/index.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
+    <!-- SVG Flag Styles for Header Switcher -->
+    <style>
+        .flag-btn {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 2px 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            opacity: 0.7;
+        }
+        .flag-btn:hover, .flag-btn.active-lang {
+            opacity: 1;
+            border-color: #ffffff;
+            transform: scale(1.08);
+        }
+        .flag-icon {
+            width: 22px;
+            height: 15px;
+            border-radius: 2px;
+            display: block;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body class="tw-min-h-[100vh] tw-w-full tw-bg-[#ffffff] tw-flex tw-flex-col">
@@ -65,10 +92,10 @@
                             tw-text-white
                         ">
                     
-                <a class="header-links" href="#about">Rreth Nesh</a>
-                <a class="header-links" href="#services">Fushat e Praktikës</a>
-                <a class="header-links" href="#library">Biblioteka Ligjore</a>
-                <a class="header-links" href="#booking">Na Kontaktoni</a>
+                <a class="header-links" href="#about" data-i18n="navAbout">Rreth Nesh</a>
+                <a class="header-links" href="#services" data-i18n="navServices">Fushat e Praktikës</a>
+                <a class="header-links" href="#library" data-i18n="navLibrary">Biblioteka Ligjore</a>
+                <a class="header-links" href="#booking" data-i18n="navContact">Na Kontaktoni</a>
             
             </div>
             <div class="tw-flex tw-gap-[20px] tw-place-items-center tw-text-xl
@@ -76,6 +103,21 @@
                          max-lg:tw-place-content-center
                          max-lg:tw-w-full
                          ">
+                <!-- Flag Language Switcher -->
+                <div class="tw-flex tw-items-center tw-gap-2 tw-mr-2">
+                    <button onclick="setLanguage('sq')" class="flag-btn active-lang" id="btn-sq" title="Shqip">
+                        <span class="fi fi-al"></span>
+                        </button>
+
+                        <button onclick="setLanguage('en')" class="flag-btn" id="btn-en" title="English">
+                        <span class="fi fi-gb"></span>
+                        </button>
+
+                        <button onclick="setLanguage('it')" class="flag-btn" id="btn-it" title="Italiano">
+                        <span class="fi fi-it"></span>
+                        </button>
+                </div>
+
                 <a href="https://www.linkedin.com/" target="_blank" rel="no-referrer" aria-label="linkedin" class="header-links tw-transition-colors tw-duration-[0.3s]">
                     <i class="bi bi-linkedin"></i>
                 </a>
@@ -119,26 +161,26 @@
                     tw-min-w-[320px]
                     tw-text-white">
 
-            <h1 class="tw-text-xl khula-font tw-font-semibold max-md:tw-text-base max-md:tw-text-center">
+            <h1 class="tw-text-xl khula-font tw-font-semibold max-md:tw-text-base max-md:tw-text-center" data-i18n="heroSubtitle">
                 E Drejtë Tregtare . Pasuri të Paluajtshme . Përfaqësim Gjyqësor 
             </h1>
         
             <h2 class="tw-text-6xl khula-font tw-font-bold max-md:tw-text-4xl tw-uppercase">
                 Grykshi & Partners
             </h2>
-            <span class="tw-text-lg max-md:tw-text-base tw-mt-2 tw-w-full tw-text-justify">
+            <span class="tw-text-lg max-md:tw-text-base tw-mt-2 tw-w-full tw-text-justify" data-i18n="heroDesc">
                 Studio ligjore që ofron shërbime juridike të specializuara dhe asistencë të gjithanshme për shoqëritë tregtare, investitorët dhe individët në Shqipëri e më gjerë.
             </span>
             <div class="tw-flex max-md:tw-gap-4 tw-gap-[2%] tw-mt-3 tw-w-full max-md:tw-flex-col">
                 <a href="#services"
                     class="tw-p-3 tw-px-[20px] tw-bg-white tw-text-black tw-flex tw-gap-2 tw-min-w-[180px] max-md:tw-min-w-[100px] tw-place-content-center tw-place-items-center tw-duration-[0.3s] tw-transition-colors hover:tw-bg-[#100f0f] hover:tw-text-[#fff] tw-max-h-[50px]">
-                    <span>Shërbimet Tona</span> 
+                    <span data-i18n="btnServices">Shërbimet Tona</span> 
                     <i class="bi bi-briefcase-fill"></i>
                 </a>
 
                 <a href="#booking"
                     class="tw-p-3 tw-text-[#fff] tw-flex tw-gap-2 tw-place-content-center tw-place-items-center tw-duration-[0.3s] tw-transition-transform tw-bg-[#000] tw-w-full hover:tw-translate-x-1">
-                    <span>Na Kontaktoni</span> 
+                    <span data-i18n="btnContact">Na Kontaktoni</span> 
                     <i class="bi bi-envelope-fill"></i>
                 </a>
             </div>
@@ -152,15 +194,15 @@
         <div class="tw-flex tw-flex-col tw-gap-[5%] tw-h-full max-lg:tw-mt-4 max-lg:tw-gap-[3%] max-lg:tw-text-center">
             <h2 class="tw-text-5xl max-md:tw-text-3xl tw-uppercase primary-text-color tw-font-medium">Grykshi & Partners</h2>
             <div class="tw-max-w-[550px] tw-mt-6 tw-text-justify tw-text-gray-700">
-                <p>Prej vitit 2014, ushtroj profesionin e avokatit, duke ofruar përfaqësim dhe këshillim juridik për individë, biznese dhe shoqëri tregtare. Gjatë këtyre viteve të ushtrimit të profesionit, kam përfaqësuar një numër të konsiderueshëm klientësh në çështje të ndryshme juridike, duke ndërtuar eksperiencë të gjerë në trajtimin dhe zgjidhjen e problematikave ligjore.</p>
+                <p data-i18n="aboutP1">Prej vitit 2014, ushtroj profesionin e avokatit, duke ofruar përfaqësim dhe këshillim juridik për individë, biznese dhe shoqëri tregtare. Gjatë këtyre viteve të ushtrimit të profesionit, kam përfaqësuar një numër të konsiderueshëm klientësh në çështje të ndryshme juridike, duke ndërtuar eksperiencë të gjerë në trajtimin dhe zgjidhjen e problematikave ligjore.</p>
 <br>
-<p>Qasja ime profesionale bazohet në përkushtimin ndaj klientit, analizën e detajuar juridike, mbrojtjen e interesave të tij dhe ofrimin e zgjidhjeve praktike dhe të argumentuara ligjërisht.</p>
+<p data-i18n="aboutP2">Qasja ime profesionale bazohet në përkushtimin ndaj klientit, analizën e detajuar juridike, mbrojtjen e interesave të tij dhe ofrimin e zgjidhjeve praktike dhe të argumentuara ligjërisht.</p>
 <br>
-<p>Në punën time, i kushtoj rëndësi të veçantë kuptimit të plotë të nevojave dhe objektivave të çdo klienti, duke e trajtuar çdo çështje me profesionalizëm, konfidencialitet dhe përgjegjësi.</p>
+<p data-i18n="aboutP3">Në punën time, i kushtoj rëndësi të veçantë kuptimit të plotë të nevojave dhe objektivave të çdo klienti, duke e trajtuar çdo çështje me profesionalizëm, konfidencialitet dhe përgjegjësi.</p>
 <br>
-<p>Eksperienca e fituar ndër vite më ka mundësuar të punoj me individë, kompani dhe subjekte të ndryshme, si në çështje gjyqësore, ashtu edhe në çështje të këshillimit dhe asistencës juridike.</p>
+<p data-i18n="aboutP4">Eksperienca e fituar ndër vite më ka mundësuar të punoj me individë, kompani dhe subjekte të ndryshme, si në çështje gjyqësore, ashtu edhe në çështje të këshillimit dhe asistencës juridike.</p>
 <br>
-<p>Synimi im është të ofroj një shërbim juridik të besueshëm, profesional dhe të orientuar drejt rezultatit, duke i dhënë çdo klienti mbështetjen ligjore të nevojshme për mbrojtjen dhe realizimin e të drejtave dhe interesave të tij.</p>
+<p data-i18n="aboutP5">Synimi im është të ofroj një shërbim juridik të besueshëm, profesional dhe të orientuar drejt rezultatit, duke i dhënë çdo klienti mbështetjen ligjore të nevojshme për mbrojtjen dhe realizimin e të drejtave dhe interesave të tij.</p>
             </div>
         </div>
     </section>
@@ -170,8 +212,8 @@
 
         <!-- Section Header -->
         <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 48px; text-align: center;">
-            <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #a3a3a3;">Ekspertiza Jonë Ligjore</span>
-            <h2 style="font-size: 32px; color: #ffffff; font-weight: 700; margin: 0;">Fushat e Praktikës</h2>
+            <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #a3a3a3;" data-i18n="servicesSub">Ekspertiza Jonë Ligjore</span>
+            <h2 style="font-size: 32px; color: #ffffff; font-weight: 700; margin: 0;" data-i18n="servicesTitle">Fushat e Praktikës</h2>
             <div style="width: 64px; height: 2px; background-color: #ffffff; margin-top: 8px;"></div>
         </div>
 
@@ -183,8 +225,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-house-gear"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Pasuritë e Paluajtshme</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Auditim pronësie, transaksione blerje-shitjeje, qira, regjistrime në kadastër dhe menaxhim i të drejtave mbi pasuritë e paluajtshme.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s1Title">Pasuritë e Paluajtshme</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s1Desc">Auditim pronësie, transaksione blerje-shitjeje, qira, regjistrime në kadastër dhe menaxhim i të drejtave mbi pasuritë e paluajtshme.</p>
             </div>
 
             <!-- 8. Pronësia Intelektuale -->
@@ -192,8 +234,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-shield-check"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Pronësia Intelektuale</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Regjistrim dhe mbrojtje e markave, patenta, e drejta e autorit, sekretet tregtare dhe mbrojtja kundër shkeljeve.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s2Title">Pronësia Intelektuale</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s2Desc">Regjistrim dhe mbrojtje e markave, patenta, e drejta e autorit, sekretet tregtare dhe mbrojtja kundër shkeljeve.</p>
             </div>
 
             <!-- 9. E Drejta e Konkurrencës -->
@@ -201,8 +243,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-diagram-3"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">E Drejta e Konkurrencës</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Këshillim për pajtueshmërinë me rregullat e konkurrencës, marrëveshjet e ndaluara, kontrollin e përqendrimeve dhe ndihmën shtetërore.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s3Title">E Drejta e Konkurrencës</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s3Desc">Këshillim për pajtueshmërinë me rregullat e konkurrencës, marrëveshjet e ndaluara, kontrollin e përqendrimeve dhe ndihmën shtetërore.</p>
             </div>
 
             <!-- 10. Energji dhe Shërbime -->
@@ -210,8 +252,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-lightning-charge"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Energji dhe Shërbime</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Asistencë në projektet e energjisë së rinovueshme, licencim, marrëveshje PPA, si dhe kuadrin rregullator të shërbimeve publike.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s4Title">Energji dhe Shërbime</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s4Desc">Asistencë në projektet e energjisë së rinovueshme, licencim, marrëveshje PPA, si dhe kuadrin rregullator të shërbimeve publike.</p>
             </div>
 
             <!-- 11. Legjislacioni i Ndërtimit -->
@@ -219,8 +261,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-building-add"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Legjislacioni i Ndërtimit</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Leje ndërtimi, kontrata sipërmarrjeje e zhvillimi, zhvillim urbanistiko-territorial dhe përputhshmëri tekniko-ligjore.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s5Title">Legjislacioni i Ndërtimit</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s5Desc">Leje ndërtimi, kontrata sipërmarrjeje e zhvillimi, zhvillim urbanistiko-territorial dhe përputhshmëri tekniko-ligjore.</p>
             </div>
             
             <!-- 1. Legjislacioni Financiar dhe Bankar -->
@@ -228,8 +270,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-bank"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Legjislacioni Financiar dhe Bankar</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Asistencë ligjore për institucionet financiare, marrëveshje kreditimi, pajtueshmëri rregullatore dhe transaksione financiare kompleksive.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s6Title">Legjislacioni Financiar dhe Bankar</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s6Desc">Asistencë ligjore për institucionet financiare, marrëveshje kreditimi, pajtueshmëri rregullatore dhe transaksione financiare kompleksive.</p>
             </div>
 
             <!-- 2. Ligji i Punës -->
@@ -237,8 +279,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-person-badge"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Ligji i Punës</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Hartim kontratash pune, rregullore të brendshme, zgjidhje mosmarrëveshjesh punëdhënës-punëmarrës dhe këshillim për procedurat e largimit.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s7Title">Ligji i Punës</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s7Desc">Hartim kontratash pune, rregullore të brendshme, zgjidhje mosmarrëveshjesh punëdhënës-punëmarrës dhe këshillim për procedurat e largimit.</p>
             </div>
 
             <!-- 3. Legjislacioni Farmaceutik -->
@@ -246,8 +288,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-capsule"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Legjislacioni Farmaceutik</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Këshillim rregullator për licencimin, importin, shpërndarjen e barnave dhe pajisjeve mjekësore si dhe përputhshmërinë me kuadrin ligjor shëndetësor.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s8Title">Legjislacioni Farmaceutik</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s8Desc">Këshillim rregullator për licencimin, importin, shpërndarjen e barnave dhe pajisjeve mjekësore si dhe përputhshmërinë me kuadrin ligjor shëndetësor.</p>
             </div>
 
             <!-- 4. E Drejta Tregtare -->
@@ -255,8 +297,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-briefcase"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">E Drejta Tregtare</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Themelim shoqërish, ristrukturime korporative, hartim kontratash tregtare, blerje e bashkime (M&A) dhe qeverisje korporative.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s9Title">E Drejta Tregtare</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s9Desc">Themelim shoqërish, ristrukturime korporative, hartim kontratash tregtare, blerje e bashkime (M&A) dhe qeverisje korporative.</p>
             </div>
 
             <!-- 5. Përfaqësimi Gjyqësor -->
@@ -264,8 +306,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-hammer"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Përfaqësimi Gjyqësor</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Mbrojtje dhe përfaqësim i interesave të klientëve në të gjitha shkallët e sistemit gjyqësor civil, administrativ dhe tregtar.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s10Title">Përfaqësimi Gjyqësor</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s10Desc">Mbrojtje dhe përfaqësim i interesave të klientëve në të gjitha shkallët e sistemit gjyqësor civil, administrativ dhe tregtar.</p>
             </div>
 
             <!-- 6. Arbitrazhi dhe Ndërmjetësimi -->
@@ -273,8 +315,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-scales"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Arbitrazhi dhe Ndërmjetësimi</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Zgjidhje jashtëgjyqësore e mosmarrëveshjeve përmes procedurave të arbitrazhit vendor e ndërkombëtar dhe ndërmjetësimit ligjor.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s11Title">Arbitrazhi dhe Ndërmjetësimi</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s11Desc">Zgjidhje jashtëgjyqësore e mosmarrëveshjeve përmes procedurave të arbitrazhit vendor e ndërkombëtar dhe ndërmjetësimit ligjor.</p>
             </div>
 
 
@@ -283,8 +325,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-broadcast"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Komunikimet Elektronike & Mediat</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Këshillim për operatorët e telekomunikacionit, transmetimet mediatike, licencimin rregullator nga AKEP/AMA dhe çështjet digjitale.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s12Title">Komunikimet Elektronike & Mediat</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s12Desc">Këshillim për operatorët e telekomunikacionit, transmetimet mediatike, licencimin rregullator nga AKEP/AMA dhe çështjet digjitale.</p>
             </div>
 
             <!-- 13. Legjislacioni Mjedisor -->
@@ -292,8 +334,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-tree"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Legjislacioni Mjedisor</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Leje mjedisore, auditim dhe vlerësim i ndikimit në mjedis (VNM), përputhshmëri me standardet mjedisore dhe përgjegjësia ekologjike.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s13Title">Legjislacioni Mjedisor</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s13Desc">Leje mjedisore, auditim dhe vlerësim i ndikimit në mjedis (VNM), përputhshmëri me standardet mjedisore dhe përgjegjësia ekologjike.</p>
             </div>
 
             <!-- 14. Ligji i Prokurimeve -->
@@ -301,8 +343,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-file-earmark-text"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Ligji i Prokurimeve</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Pjesëmarrje në tenderë publikë, përgatitje dokumentacioni, ankimime pranë Komisionit të Prokurimit Publik (KPP) dhe PPP.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s14Title">Ligji i Prokurimeve</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s14Desc">Pjesëmarrje në tenderë publikë, përgatitje dokumentacioni, ankimime pranë Komisionit të Prokurimit Publik (KPP) dhe PPP.</p>
             </div>
 
             <!-- 15. Mbrojtja e Konsumatorit & Siguria -->
@@ -310,8 +352,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-cart-check"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Mbrojtja e Konsumatorit & Siguria</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Pajtueshmëri me standardet e sigurisë së produkteve, etiketimin, garancitë ligjore dhe përfaqësimin në mosmarrëveshjet konsumatore.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s15Title">Mbrojtja e Konsumatorit & Siguria</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s15Desc">Pajtueshmëri me standardet e sigurisë së produkteve, etiketimin, garancitë ligjore dhe përfaqësimin në mosmarrëveshjet konsumatore.</p>
             </div>
 
             <!-- 16. Doganat -->
@@ -319,8 +361,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-box-seam"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Doganat</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Regjimet doganore, klasifikimi i mallrave, tarifimi doganor, procedurat e import/eksportit dhe zgjidhja e mosmarrëveshjeve me autoritetet doganore.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s16Title">Doganat</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s16Desc">Regjimet doganore, klasifikimi i mallrave, tarifimi doganor, procedurat e import/eksportit dhe zgjidhja e mosmarrëveshjeve me autoritetet doganore.</p>
             </div>
 
             <!-- 17. Këshilla & Pajtueshmëria Tatimore -->
@@ -328,8 +370,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-receipt"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Këshilla & Pajtueshmëria Tatimore</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Planifikim tatimor, marrëveshje për shmangien e double taxation, auditime tatimore dhe ankimime administrative e gjyqësore.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s17Title">Këshilla & Pajtueshmëria Tatimore</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s17Desc">Planifikim tatimor, marrëveshje për shmangien e double taxation, auditime tatimore dhe ankimime administrative e gjyqësore.</p>
             </div>
 
             <!-- 18. Mbrojtja e të Dhënave Personale -->
@@ -337,8 +379,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-lock"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Mbrojtja e të Dhënave Personale</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Përputhshmëri me ligjin për mbrojtjen e të dhënave personale (GDPR), politikat e privatësisë, auditime të brendshme dhe njoftime rregullatore.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s18Title">Mbrojtja e të Dhënave Personale</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s18Desc">Përputhshmëri me ligjin për mbrojtjen e të dhënave personale (GDPR), politikat e privatësisë, auditime të brendshme dhe njoftime rregullatore.</p>
             </div>
 
             <!-- 19. E Drejta Familjare -->
@@ -346,8 +388,8 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-people"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">E Drejta Familjare</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Zgjidhje martese, pjesëtim pasurie bashkëshortore, kujdestari fëmijësh, birësime dhe çështje të së drejtës trashëgimore.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s19Title">E Drejta Familjare</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s19Desc">Zgjidhje martese, pjesëtim pasurie bashkëshortore, kujdestari fëmijësh, birësime dhe çështje të së drejtës trashëgimore.</p>
             </div>
 
            
@@ -356,14 +398,14 @@
                 <div style="width: 48px; height: 48px; border-radius: 6px; background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #ffffff;">
                     <i class="bi bi-translate"></i>
                 </div>
-                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;">Përkthime Ligjore</h3>
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">Përkthim zyrtar i certifikuar dhe i noterizuar i dokumenteve juridike, kontratave, vendimeve gjyqësore dhe dokumenteve të korporatave.</p>
+                <h3 style="font-size: 18px; font-weight: 600; color: #ffffff; margin: 0;" data-i18n="s20Title">Përkthime Ligjore</h3>
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="s20Desc">Përkthim zyrtar i certifikuar dhe i noterizuar i dokumenteve juridike, kontratave, vendimeve gjyqësore dhe dokumenteve të korporatave.</p>
             </div>
 
         </div>
 
         <a href="#booking" style="margin-top: 48px; padding: 16px 28px; background-color: #ffffff; color: #000000; font-weight: 600; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 12px;">
-            <span>Kërko Broshurën e Shërbimeve</span> 
+            <span data-i18n="btnBrochure">Kërko Broshurën e Shërbimeve</span> 
             <i class="bi bi-arrow-right"></i>
         </a>
     </section>
@@ -375,40 +417,40 @@
         </div>
         <div class="tw-flex tw-flex-col tw-gap-[5%] tw-h-full tw-mt-[5%]">
             <div class="tw-flex tw-flex-col tw-gap-2 max-md:tw-text-center">
-                <h2 class="tw-text-3xl max-md:tw-text-xl tw-font-medium">Na Kontaktoni</h2>
-                <h2 class="tw-text-5xl max-md:tw-text-3xl primary-text-color tw-font-medium">Konsultë Ligjore</h2>
+                <h2 class="tw-text-3xl max-md:tw-text-xl tw-font-medium" data-i18n="contactHeader">Na Kontaktoni</h2>
+                <h2 class="tw-text-5xl max-md:tw-text-3xl primary-text-color tw-font-medium" data-i18n="contactTitle">Konsultë Ligjore</h2>
             </div>
             <div class="tw-max-w-[450px] max-md:tw-max-w-[350px] tw-place-content-center tw-p-2 tw-mt-4 tw-flex tw-flex-col tw-gap-3">
                
                 <div class="tw-flex tw-w-[450px] max-md:tw-w-[340px] tw-flex-col tw-gap-4">
                     <div class="tw-flex tw-flex-col tw-gap-1">
-                        <div class="tw-text-gray-500">Emri i Plotë</div>
+                        <div class="tw-text-gray-500" data-i18n="labelName">Emri i Plotë</div>
                         <input type="text" class="input" required placeholder="p.sh. John Doe">
                     </div>
                     <div class="tw-flex tw-flex-col tw-gap-1">
-                        <div class="tw-text-gray-500">Numri i Telefonit</div>
+                        <div class="tw-text-gray-500" data-i18n="labelPhone">Numri i Telefonit</div>
                         <input type="text" class="input" required placeholder="+355 69 000 0000">
                     </div>
                     <div class="tw-flex tw-flex-col tw-gap-1">
-                        <div class="tw-text-gray-500">Adresa e Email-it</div>
+                        <div class="tw-text-gray-500" data-i18n="labelEmail">Adresa e Email-it</div>
                         <input type="email" class="input" required placeholder="emri@domain.com" id="email">
                     </div>
 
                     <div class="tw-flex tw-flex-col tw-w-full tw-gap-2">
-                        <div class="tw-text-gray-500">Fusha / Detaje mbi Çështjen</div>
+                        <div class="tw-text-gray-500" data-i18n="labelMessage">Fusha / Detaje mbi Çështjen</div>
                         <textarea class="input tw-resize-y tw-w-full tw-max-h-[250px] tw-min-h-[40px]" placeholder="Përshkruani çështjen tuaj ligjore..."></textarea>
                     </div>
                 </div>
 
                 <a href="#" class="btn tw-transition-transform hover:tw-translate-x-2 tw-duration-[0.3s] tw-mt-5 tw-ml-auto">
-                    <span>Dërgo Mesazhin</span>  
+                    <span data-i18n="btnSendMessage">Dërgo Mesazhin</span>  
                     <i class="bi bi-arrow-right"></i> 
                 </a>
 
             </div>
 
             <div class="tw-flex tw-flex-col tw-gap-2 tw-mt-4 tw-text-center">
-                <h3 class="tw-text-xl">Telefononi Direkt</h3>
+                <h3 class="tw-text-xl" data-i18n="callDirect">Telefononi Direkt</h3>
                 <div class="tw-text-3xl primary-text-color">+355 69 432 0488</div>
             </div>
         </div>
@@ -416,80 +458,22 @@
 
     <section class="tw-mt-5 tw-w-full tw-flex tw-flex-col tw-p-[5%] tw-place-items-center">
 
-        <h3 class="tw-text-3xl max-md:tw-text-2xl primary-text-color tw-font-medium">
-            Të thënë nga Klientët
-        </h3>
         
-        <div class="tw-mt-[5%] tw-flex tw-w-full tw-place-content-center tw-gap-[5%]">
-
-            <div class="review-container tw-flex tw-flex-col">
-                <div class="tw-flex tw-h-[150px] max-md:tw-h-[150px] tw-max-w-[550px]">
-                    <div class="slides fade tw-text-lg tw-text-justify">
-                        <q class="tw-italic tw-text-gray-600">
-                            Grykshi & Partners na përfaqësoi në një transaksion të rëndësishëm tregtar. Përkushtimi dhe profesionalizmi i tyre ishin të nivelit më të lartë.
-                        </q>
-                        <div class="tw-mt-2 tw-text-yellow-400">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p class="tw-mt-3">- Drejtor Ekzekutiv, Grup Financiar</p>
-                    </div>
-                
-                    <div class="slides fade tw-text-lg tw-text-justify">
-                        <q class="tw-italic tw-text-gray-600">
-                            Këshillim i shkëlqyer ligjor për investimet tona në pasuri të paluajtshme. Zgjodhën çdo çështje rregullatore me eficiencë të plotë.
-                        </q>
-                        <div class="tw-mt-2 tw-text-yellow-400">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p class="tw-mt-3">- Ortak Menaxhues, Shoqëri Investimesh</p>
-                    </div>
-
-                    <div class="slides fade tw-text-lg tw-text-justify">
-                        <q class="tw-italic tw-text-gray-600 ">
-                            Përfaqësim gjyqësor i shkëlqyer. Ekipi i tyre tregoi qartësi absolute dhe ekspertizë të lartë gjatë të gjithë procesit.
-                        </q>
-                        <div class="tw-mt-2 tw-text-yellow-400">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p class="tw-mt-3">- Anëtar Bordi, Kompani Shërbimesh</p>
-                    </div>
-                </div>
-              
-                <!-- Navigation dots -->
-                <div class="dots-container tw-mt-auto">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-            </div>
-        </div>
 
         <div class="tw-mt-[5%] tw-flex tw-flex-col tw-w-full tw-place-items-center tw-place-content-center tw-gap-5">
-            <h2 class="tw-text-3xl primary-text-color">Vendndodhja e Zyrës</h2>
+            <h2 class="tw-text-3xl primary-text-color" data-i18n="locationTitle">Vendndodhja e Zyrës</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.2390149439666!2d19.811761474963227!3d41.32541569983861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135031475b1d5233%3A0x64f5183a22469b38!2sShyqyri%20B%C3%ABrxolli%20Street!5e0!3m2!1sen!2s!4v1787841280442!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </section>
 
     <section class="tw-w-full tw-flex tw-flex-col tw-place-content-center tw-px-[10%] tw-p-[5%] tw-gap-[10%] tw-place-items-center tw-bg-[#EFEFEF]" id="library">
         <div class="tw-w-full tw-place-content-center tw-flex tw-flex-col tw-gap-3 tw-place-items-center">
-            <h2 class="tw-text-3xl max-md:tw-text-xl primary-text-color">Njoftimet & Buletini Ligjor</h2>
-            <h2 class="tw-text-xl max-md:tw-text-lg">Abonohuni për të marrë përditësime ligjore</h2>
+            <h2 class="tw-text-3xl max-md:tw-text-xl primary-text-color" data-i18n="newsletterTitle">Njoftimet & Buletini Ligjor</h2>
+            <h2 class="tw-text-xl max-md:tw-text-lg" data-i18n="newsletterSubtitle">Abonohuni për të marrë përditësime ligjore</h2>
 
             <div class="input tw-flex tw-h-[50px] tw-bg-white tw-p-2 tw-overflow-hidden tw-place-items-center ">
                 <input type="email" class="tw-w-full tw-h-full tw-bg-transparent tw-outline-none tw-px-3" placeholder="Shkruani email-in tuaj">
-                <button class="btn tw-h-[35px] tw-duration-[0.3s] tw-transition-colors">Abonohuni</button>   
+                <button class="btn tw-h-[35px] tw-duration-[0.3s] tw-transition-colors" data-i18n="btnSubscribe">Abonohuni</button>   
             </div>
         </div>
     </section>
@@ -507,7 +491,7 @@
                     <h2 style="font-size: 20px; font-weight: 700; letter-spacing: -0.5px; margin: 0; color: #ffffff;">Grykshi & Partners</h2>
                 </div>
                 
-                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;">
+                <p style="font-size: 13px; color: #a3a3a3; line-height: 1.6; margin: 0;" data-i18n="footerDesc">
                     Studio ligjore e specializuar në ofrimin e shërbimeve juridike të nivelit të lartë për korporata, institucione dhe individë.
                 </p>
 
@@ -526,7 +510,7 @@
                     </div>
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <i class="bi bi-clock" style="color: #ffffff;"></i>
-                        <span style="color: #a3a3a3; font-size: 12px;">Hën - Pre: 09:00 - 18:00</span>
+                        <span style="color: #a3a3a3; font-size: 12px;" data-i18n="workHours">Hën - Pre: 09:00 - 18:00</span>
                     </div>
                 </div>
 
@@ -546,41 +530,41 @@
 
             <!-- Column 2: Practice Areas Grid -->
             <div style="flex: 2 1 450px; display: flex; flex-direction: column; gap: 16px;">
-                <h3 style="font-size: 16px; font-weight: 600; color: #ffffff; margin: 0; text-transform: uppercase; letter-spacing: 1px;">Fushat e Praktikës</h3>
+                <h3 style="font-size: 16px; font-weight: 600; color: #ffffff; margin: 0; text-transform: uppercase; letter-spacing: 1px;" data-i18n="servicesTitle">Fushat e Praktikës</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; font-size: 12px;">
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Legjislacioni Financiar & Bankar</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Ligji i Punës</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Legjislacioni Farmaceutik</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• E Drejta Tregtare</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Përfaqësimi Gjyqësor</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Arbitrazhi & Ndërmjetësimi</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Pasuritë e Paluajtshme</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Pronësia Intelektuale</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• E Drejta e Konkurrencës</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Energji dhe Shërbime</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Legjislacioni i Ndërtimit</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Komunikimet Elektronike & Mediat</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Legjislacioni Mjedisor</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Ligji i Prokurimeve</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Mbrojtja e Konsumatorit</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Doganat</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Pajtueshmëria Tatimore</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Mbrojtja e të Dhënave Personale</a>
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• E Drejta Familjare</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s6Title">• Legjislacioni Financiar & Bankar</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s7Title">• Ligji i Punës</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s8Title">• Legjislacioni Farmaceutik</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s9Title">• E Drejta Tregtare</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s10Title">• Përfaqësimi Gjyqësor</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s11Title">• Arbitrazhi & Ndërmjetësimi</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s1Title">• Pasuritë e Paluajtshme</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s2Title">• Pronësia Intelektuale</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s3Title">• E Drejta e Konkurrencës</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s4Title">• Energji dhe Shërbime</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s5Title">• Legjislacioni i Ndërtimit</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s12Title">• Komunikimet Elektronike & Mediat</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s13Title">• Legjislacioni Mjedisor</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s14Title">• Ligji i Prokurimeve</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s15Title">• Mbrojtja e Konsumatorit</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s16Title">• Doganat</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s17Title">• Pajtueshmëria Tatimore</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s18Title">• Mbrojtja e të Dhënave Personale</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s19Title">• E Drejta Familjare</a>
                     
-                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">• Përkthime Ligjore</a>
+                    <a href="#services" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="s20Title">• Përkthime Ligjore</a>
                 </div>
             </div>
 
             <!-- Column 3: Navigation Quick Links -->
             <div style="flex: 1 1 180px; max-width: 200px; display: flex; flex-direction: column; gap: 16px;">
-                <h3 style="font-size: 16px; font-weight: 600; color: #ffffff; margin: 0; text-transform: uppercase; letter-spacing: 1px;">Lidhje të Shpejta</h3>
+                <h3 style="font-size: 16px; font-weight: 600; color: #ffffff; margin: 0; text-transform: uppercase; letter-spacing: 1px;" data-i18n="quickLinksTitle">Lidhje të Shpejta</h3>
                 <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
-                    <a href="#about" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">Rreth Nesh</a>
-                    <a href="#library" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">Njoftime Ligjore</a>
-                    <a href="#library" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">Buletine & Publikime</a>
-                    <a href="#booking" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">Na Kontaktoni</a>
-                    <a href="#" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'">Politika e Privatësisë</a>
+                    <a href="#about" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="navAbout">Rreth Nesh</a>
+                    <a href="#library" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="linkNotices">Njoftime Ligjore</a>
+                    <a href="#library" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="linkBulletins">Buletine & Publikime</a>
+                    <a href="#booking" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="navContact">Na Kontaktoni</a>
+                    <a href="#" style="color: #a3a3a3; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#a3a3a3'" data-i18n="privacyPolicy">Politika e Privatësisë</a>
                 </div>
             </div>
 
@@ -588,12 +572,274 @@
 
         <!-- Bottom Copyright Bar -->
         <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid #171717; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px; color: #737373; max-width: 1300px; margin-left: auto; margin-right: auto;">
-            <span>&copy; 2026 Grykshi & Partners. Të gjitha të drejtat të rezervuara.</span>
-            <span>Studio Ligjore • Tirana, Albania</span>
+            <span data-i18n="copyright">&copy; 2026 Grykshi & Partners. Të gjitha të drejtat të rezervuara.</span>
+            <span data-i18n="footerLocation">Studio Ligjore • Tirana, Albania</span>
         </div>
 
     </footer>
 
+    <!-- Translations & Switcher Function -->
+    <script>
+        const translations = {
+            sq: {
+                metaTitle: "Grykshi & Partners | Studio Ligjore & Këshillim",
+                navAbout: "Rreth Nesh",
+                navServices: "Fushat e Praktikës",
+                navLibrary: "Biblioteka Ligjore",
+                navContact: "Na Kontaktoni",
+                heroSubtitle: "E Drejtë Tregtare . Pasuri të Paluajtshme . Përfaqësim Gjyqësor",
+                heroDesc: "Studio ligjore që ofron shërbime juridike të specializuara dhe asistencë të gjithanshme për shoqëritë tregtare, investitorët dhe individët në Shqipëri e më gjerë.",
+                btnServices: "Shërbimet Tona",
+                btnContact: "Na Kontaktoni",
+                aboutP1: "Prej vitit 2014, ushtroj profesionin e avokatit, duke ofruar përfaqësim dhe këshillim juridik për individë, biznese dhe shoqëri tregtare. Gjatë këtyre viteve të ushtrimit të profesionit, kam përfaqësuar një numër të konsiderueshëm klientësh në çështje të ndryshme juridike, duke ndërtuar eksperiencë të gjerë në trajtimin dhe zgjidhjen e problematikave ligjore.",
+                aboutP2: "Qasja ime profesionale bazohet në përkushtimin ndaj klientit, analizën e detajuar juridike, mbrojtjen e interesave të tij dhe ofrimin e zgjidhjeve praktike dhe të argumentuara ligjërisht.",
+                aboutP3: "Në punën time, i kushtoj rëndësi të veçantë kuptimit të plotë të nevojave dhe objektivave të çdo klienti, duke e trajtuar çdo çështje me profesionalizëm, konfidencialitet dhe përgjegjësi.",
+                aboutP4: "Eksperienca e fituar ndër vite më ka mundësuar të punoj me individë, kompani dhe subjekte të ndryshme, si në çështje gjyqësore, ashtu edhe në çështje të këshillimit dhe asistencës juridike.",
+                aboutP5: "Synimi im është të ofroj një shërbim juridik të besueshëm, profesional dhe të orientuar drejt rezultatit, duke i dhënë çdo klienti mbështetjen ligjore të nevojshme për mbrojtjen dhe realizimin e të drejtave dhe interesave të tij.",
+                servicesSub: "Ekspertiza Jonë Ligjore",
+                servicesTitle: "Fushat e Praktikës",
+                s1Title: "Pasuritë e Paluajtshme",
+                s1Desc: "Auditim pronësie, transaksione blerje-shitjeje, qira, regjistrime në kadastër dhe menaxhim i të drejtave mbi pasuritë e paluajtshme.",
+                s2Title: "Pronësia Intelektuale",
+                s2Desc: "Regjistrim dhe mbrojtje e markave, patenta, e drejta e autorit, sekretet tregtare dhe mbrojtja kundër shkeljeve.",
+                s3Title: "E Drejta e Konkurrencës",
+                s3Desc: "Këshillim për pajtueshmërinë me rregullat e konkurrencës, marrëveshjet e ndaluara, kontrollin e përqendrimeve dhe ndihmën shtetërore.",
+                s4Title: "Energji dhe Shërbime",
+                s4Desc: "Asistencë në projektet e energjisë së rinovueshme, licencim, marrëveshje PPA, si dhe kuadrin rregullator të shërbimeve publike.",
+                s5Title: "Legjislacioni i Ndërtimit",
+                s5Desc: "Leje ndërtimi, kontrata sipërmarrjeje e zhvillimi, zhvillim urbanistiko-territorial dhe përputhshmëri tekniko-ligjore.",
+                s6Title: "Legjislacioni Financiar dhe Bankar",
+                s6Desc: "Asistencë ligjore për institucionet financiare, marrëveshje kreditimi, pajtueshmëri rregullatore dhe transaksione financiare kompleksive.",
+                s7Title: "Ligji i Punës",
+                s7Desc: "Hartim kontratash pune, rregullore të brendshme, zgjidhje mosmarrëveshjesh punëdhënës-punëmarrës dhe këshillim për procedurat e largimit.",
+                s8Title: "Legjislacioni Farmaceutik",
+                s8Desc: "Këshillim rregullator për licencimin, importin, shpërndarjen e barnave dhe pajisjeve mjekësore si dhe përputhshmërinë me kuadrin ligjor shëndetësor.",
+                s9Title: "E Drejta Tregtare",
+                s9Desc: "Themelim shoqërish, ristrukturime korporative, hartim kontratash tregtare, blerje e bashkime (M&A) dhe qeverisje korporative.",
+                s10Title: "Përfaqësimi Gjyqësor",
+                s10Desc: "Mbrojtje dhe përfaqësim i interesave të klientëve në të gjitha shkallët e sistemit gjyqësor civil, administrativ dhe tregtar.",
+                s11Title: "Arbitrazhi dhe Ndërmjetësimi",
+                s11Desc: "Zgjidhje jashtëgjyqësore e mosmarrëveshjeve përmes procedurave të arbitrazhit vendor e ndërkombëtar dhe ndërmjetësimit ligjor.",
+                s12Title: "Komunikimet Elektronike & Mediat",
+                s12Desc: "Këshillim për operatorët e telekomunikacionit, transmetimet mediatike, licencimin rregullator nga AKEP/AMA dhe çështjet digjitale.",
+                s13Title: "Legjislacioni Mjedisor",
+                s13Desc: "Leje mjedisore, auditim dhe vlerësim i ndikimit në mjedis (VNM), përputhshmëri me standardet mjedisore dhe përgjegjësia ekologjike.",
+                s14Title: "Ligji i Prokurimeve",
+                s14Desc: "Pjesëmarrje në tenderë publikë, përgatitje dokumentacioni, ankimime pranë Komisionit të Prokurimit Publik (KPP) dhe PPP.",
+                s15Title: "Mbrojtja e Konsumatorit & Siguria",
+                s15Desc: "Pajtueshmëri me standardet e sigurisë së produkteve, etiketimin, garancitë ligjore dhe përfaqësimin në mosmarrëveshjet konsumatore.",
+                s16Title: "Doganat",
+                s16Desc: "Regjimet doganore, klasifikimi i mallrave, tarifimi doganor, procedurat e import/eksportit dhe zgjidhja e mosmarrëveshjeve me autoritetet doganore.",
+                s17Title: "Këshilla & Pajtueshmëria Tatimore",
+                s17Desc: "Planifikim tatimor, marrëveshje për shmangien e double taxation, auditime tatimore dhe ankimime administrative e gjyqësore.",
+                s18Title: "Mbrojtja e të Dhënave Personale",
+                s18Desc: "Përputhshmëri me ligjin për mbrojtjen e të dhënave personale (GDPR), politikat e privatësisë, auditime të brendshme dhe njoftime rregullatore.",
+                s19Title: "E Drejta Familjare",
+                s19Desc: "Zgjidhje martese, pjesëtim pasurie bashkëshortore, kujdestari fëmijësh, birësime dhe çështje të së drejtës trashëgimore.",
+                s20Title: "Përkthime Ligjore",
+                s20Desc: "Përkthim zyrtar i certifikuar dhe i noterizuar i dokumenteve juridike, kontratave, vendimeve gjyqësore dhe dokumenteve të korporatave.",
+                btnBrochure: "Kërko Broshurën e Shërbimeve",
+                contactHeader: "Na Kontaktoni",
+                contactTitle: "Konsultë Ligjore",
+                labelName: "Emri i Plotë",
+                labelPhone: "Numri i Telefonit",
+                labelEmail: "Adresa e Email-it",
+                labelMessage: "Fusha / Detaje mbi Çështjen",
+                btnSendMessage: "Dërgo Mesazhin",
+                callDirect: "Telefononi Direkt",
+                locationTitle: "Vendndodhja e Zyrës",
+                newsletterTitle: "Njoftimet & Buletini Ligjor",
+                newsletterSubtitle: "Abonohuni për të marrë përditësime ligjore",
+                btnSubscribe: "Abonohuni",
+                footerDesc: "Studio ligjore e specializuar në ofrimin e shërbimeve juridike të nivelit të lartë për korporata, institucione dhe individë.",
+                workHours: "Hën - Pre: 09:00 - 18:00",
+                quickLinksTitle: "Lidhje të Shpejta",
+                linkNotices: "Njoftime Ligjore",
+                linkBulletins: "Buletine & Publikime",
+                privacyPolicy: "Politika e Privatësisë",
+                copyright: "© 2026 Grykshi & Partners. Të gjitha të drejtat të rezervuara.",
+                footerLocation: "Studio Ligjore • Tirana, Albania"
+            },
+            en: {
+                metaTitle: "Grykshi & Partners | Law Firm & Legal Counseling",
+                navAbout: "About Us",
+                navServices: "Practice Areas",
+                navLibrary: "Legal Library",
+                navContact: "Contact Us",
+                heroSubtitle: "Commercial Law . Real Estate . Litigation & Representation",
+                heroDesc: "A specialized law firm providing full legal services and assistance for corporate clients, investors, and individuals in Albania and beyond.",
+                btnServices: "Our Services",
+                btnContact: "Contact Us",
+                aboutP1: "Since 2014, I have practiced law, offering legal representation and counseling to individuals, businesses, and corporate entities. Over these years, I have represented a significant number of clients in various legal matters, building extensive expertise in handling complex legal issues.",
+                aboutP2: "My professional approach is centered on client dedication, thorough legal analysis, safeguarding client interests, and delivering practical, well-founded legal solutions.",
+                aboutP3: "In my work, I place strong emphasis on completely understanding each client's specific needs and objectives, addressing every case with high professionalism, confidentiality, and responsibility.",
+                aboutP4: "The experience accumulated over the years enables me to work with individuals and companies across both litigation and general advisory services.",
+                aboutP5: "My goal is to offer reliable, professional, and result-oriented legal services, providing every client with the legal support required to protect and exercise their rights.",
+                servicesSub: "Our Legal Expertise",
+                servicesTitle: "Practice Areas",
+                s1Title: "Real Estate",
+                s1Desc: "Title auditing, sale and purchase transactions, lease agreements, property registrations, and real estate asset management.",
+                s2Title: "Intellectual Property",
+                s2Desc: "Registration and protection of trademarks, patents, copyrights, trade secrets, and representation against infringement.",
+                s3Title: "Competition Law",
+                s3Desc: "Advisory on compliance with antitrust rules, prohibited agreements, merger control, and state aid regulations.",
+                s4Title: "Energy & Utilities",
+                s4Desc: "Legal assistance for renewable energy projects, regulatory licensing, PPA agreements, and public service compliance.",
+                s5Title: "Construction Law",
+                s5Desc: "Building permits, development and contractor agreements, urban planning regulations, and technical-legal compliance.",
+                s6Title: "Banking & Financial Law",
+                s6Desc: "Legal support for financial institutions, credit agreements, regulatory compliance, and complex financial transactions.",
+                s7Title: "Labor & Employment Law",
+                s7Desc: "Drafting employment contracts, internal policies, dispute resolution, and guidance on termination procedures.",
+                s8Title: "Pharmaceutical Law",
+                s8Desc: "Regulatory advisory for licensing, importation, distribution of pharmaceuticals, medical devices, and healthcare compliance.",
+                s9Title: "Commercial Law",
+                s9Desc: "Company incorporation, corporate restructurings, commercial contract drafting, mergers & acquisitions (M&A), and governance.",
+                s10Title: "Litigation & Representation",
+                s10Desc: "Representation and advocacy for client interests across all levels of civil, administrative, and commercial courts.",
+                s11Title: "Arbitration & Mediation",
+                s11Desc: "Out-of-court dispute resolution through domestic and international arbitration procedures and mediation.",
+                s12Title: "Electronic Communications & Media",
+                s12Desc: "Counsel for telecom operators, media broadcasting, regulatory licensing with local authorities, and digital sector compliance.",
+                s13Title: "Environmental Law",
+                s13Desc: "Environmental permits, Environmental Impact Assessment (EIA) audits, compliance standards, and ecological liability.",
+                s14Title: "Public Procurement Law",
+                s14Desc: "Public tender participation, documentation preparation, appeals before the Public Procurement Commission, and PPP projects.",
+                s15Title: "Consumer Protection & Safety",
+                s15Desc: "Compliance with product safety standards, labeling requirements, legal warranties, and consumer dispute defense.",
+                s16Title: "Customs Law",
+                s16Desc: "Customs regimes, tariff classification, import/export procedures, and dispute resolution with customs authorities.",
+                s17Title: "Tax Advisory & Compliance",
+                s17Desc: "Tax planning, double taxation avoidance treaties, tax audits, and administrative or judicial appeals.",
+                s18Title: "Data Protection & GDPR",
+                s18Desc: "Compliance with personal data protection laws (GDPR), privacy policies, internal data audits, and regulatory notifications.",
+                s19Title: "Family Law",
+                s19Desc: "Divorce proceedings, matrimonial asset division, legal custody, adoptions, and inheritance matters.",
+                s20Title: "Legal Translations",
+                s20Desc: "Official certified and notarized translation of legal documents, contracts, court rulings, and corporate filings.",
+                btnBrochure: "Request Service Brochure",
+                contactHeader: "Contact Us",
+                contactTitle: "Legal Consultation",
+                labelName: "Full Name",
+                labelPhone: "Phone Number",
+                labelEmail: "Email Address",
+                labelMessage: "Practice Area / Case Details",
+                btnSendMessage: "Send Message",
+                callDirect: "Call Directly",
+                locationTitle: "Office Location",
+                newsletterTitle: "Legal Notices & Bulletin",
+                newsletterSubtitle: "Subscribe to receive key legal updates",
+                btnSubscribe: "Subscribe",
+                footerDesc: "Law firm specialized in delivering top-tier legal services for corporations, institutions, and individuals.",
+                workHours: "Mon - Fri: 09:00 - 18:00",
+                quickLinksTitle: "Quick Links",
+                linkNotices: "Legal Notices",
+                linkBulletins: "Bulletins & Publications",
+                privacyPolicy: "Privacy Policy",
+                copyright: "© 2026 Grykshi & Partners. All rights reserved.",
+                footerLocation: "Law Firm • Tirana, Albania"
+            },
+            it: {
+                metaTitle: "Grykshi & Partners | Studio Legale & Consulenza",
+                navAbout: "Chi Siamo",
+                navServices: "Aree di Attività",
+                navLibrary: "Biblioteca Legale",
+                navContact: "Contatti",
+                heroSubtitle: "Diritto Commerciale . Beni Immobili . Rappresentanza Giudiziaria",
+                heroDesc: "Studio legale specializzato che offre servizi giuridici ad alto livello e assistenza completa a società, investitori e privati in Albania e all'estero.",
+                btnServices: "I Nostri Servizi",
+                btnContact: "Contattaci",
+                aboutP1: "Dal 2014 esercito la professione di avvocato, offrendo rappresentanza e consulenza legale a privati, imprese e società commerciali. In questi anni di attività, ho rappresentato numerosi clienti in diverse questioni giuridiche, maturando un'ampia esperienza nella risoluzione di problematiche legali.",
+                aboutP2: "Il mio approccio professionale si basa sulla dedizione al cliente, sull'analisi giuridica approfondita, sulla tutela dei suoi interessi e sull'offerta di soluzioni pratiche e giuridicamente fondate.",
+                aboutP3: "Nel mio lavoro attribuisco un'importanza fondamentale alla piena comprensione delle esigenze di ciascun cliente, gestendo ogni pratica con professionalità, riservatezza e responsabilità.",
+                aboutP4: "L'esperienza acquisita negli anni mi consente di assistere individui e aziende sia in ambito giudiziale sia nelle attività di consulenza e assistenza legale.",
+                aboutP5: "Il mio obiettivo è fornire un servizio legale affidabile, professionale e orientato ai risultati, garantendo a ogni cliente il supporto necessario per la tutela dei propri diritti.",
+                servicesSub: "La Nostra Competenza Legale",
+                servicesTitle: "Aree di Attività",
+                s1Title: "Diritto Immobiliare",
+                s1Desc: "Verifiche di proprietà, transazioni di compravendita, locazioni, registrazioni catastali e gestione dei diritti reali immobiliari.",
+                s2Title: "Proprietà Intellettuale",
+                s2Desc: "Registrazione e tutela di marchi, brevetti, diritto d'autore, segreti commerciali e difesa da violazioni ed espropri.",
+                s3Title: "Diritto della Concorrenza",
+                s3Desc: "Consulenza sulla conformità alla normativa antitrust, intese vietate, controllo delle concentrazioni e aiuti di Stato.",
+                s4Title: "Energia e Servizi Pubblici",
+                s4Desc: "Assistenza in progetti di energia rinnovabile, licenze, contratti PPA e conformità al quadro normativo dei servizi pubblici.",
+                s5Title: "Diritto delle Costruzioni",
+                s5Desc: "Permessi di costruire, appalti e contratti di sviluppo, pianificazione urbanistica e conformità tecnico-legale.",
+                s6Title: "Diritto Bancario e Finanziario",
+                s6Desc: "Assistenza legale per istituti finanziari, contratti di credito, compliance normativa e transazioni finanziarie complesse.",
+                s7Title: "Diritto del Lavoro",
+                s7Desc: "Redazione di contratti di lavoro, regolamenti interni, risoluzione di controversie lavorative e procedure di licenziamento.",
+                s8Title: "Diritto Farmaceutico",
+                s8Desc: "Consulenza normativa per autorizzazioni, importazione, distribuzione di farmaci e dispositivi medici e conformità sanitaria.",
+                s9Title: "Diritto Commerciale",
+                s9Desc: "Costituzione societaria, ristrutturazioni aziendali, redazione di contratti commerciali, fusioni e acquisizioni (M&A) e governance.",
+                s10Title: "Rappresentanza Giudiziaria",
+                s10Desc: "Difesa e rappresentanza degli interessi dei clienti in ogni grado del sistema giudiziario civile, amministrativo e commerciale.",
+                s11Title: "Arbitrato e Mediazione",
+                s11Desc: "Risoluzione stragiudiziale delle controversie tramite procedure di arbitrato nazionale e internazionale e mediazione legale.",
+                s12Title: "Telecomunicazioni & Media",
+                s12Desc: "Consulenza per operatori di telecomunicazione, emittenti media, licenze con le autorità competenti e questioni digitali.",
+                s13Title: "Diritto Ambientale",
+                s13Desc: "Autorizzazioni ambientali, valutazioni di impatto ambientale (VIA), conformità agli standard e responsabilità ecologica.",
+                s14Title: "Appalti Pubblici",
+                s14Desc: "Partecipazione a gare pubbliche, redazione della documentazione, ricorsi dinanzi alle commissioni competenti e progetti PPP.",
+                s15Title: "Tutela del Consumatore",
+                s15Desc: "Conformità agli standard di sicurezza dei prodotti, etichettatura, garanzie legali e rappresentanza nelle controversie dei consumatori.",
+                s16Title: "Diritto Doganale",
+                s16Desc: "Regimi doganali, classificazione delle merci, tariffe doganali, procedure di import/export e controversie con le autorità doganali.",
+                s17Title: "Consulenza e Compliance Fiscale",
+                s17Desc: "Pianificazione fiscale, trattati contro le doppie imposizioni, verifiche fiscali e ricorsi amministrativi e giudiziari.",
+                s18Title: "Protezione dei Dati Personali (GDPR)",
+                s18Desc: "Adeguamento alla normativa sulla privacy (GDPR), redazione di informative, audit interni e notifiche alle autorità.",
+                s19Title: "Diritto di Famiglia",
+                s19Desc: "Separazioni e divorzi, divisione dei beni coniugali, affidamento dei minori, adozioni e questioni ereditarie.",
+                s20Title: "Traduzioni Legali",
+                s20Desc: "Traduzione ufficiale certificata e giurata di documenti giuridici, contratti, sentenze giudiziarie e atti societari.",
+                btnBrochure: "Richiedi la Brochure dei Servizi",
+                contactHeader: "Contattaci",
+                contactTitle: "Consulenza Legale",
+                labelName: "Nome e Cognome",
+                labelPhone: "Numero di Telefono",
+                labelEmail: "Indirizzo Email",
+                labelMessage: "Ambito / Dettagli sulla Questione",
+                btnSendMessage: "Invia il Messaggio",
+                callDirect: "Chiama Direttamente",
+                locationTitle: "Sede dello Studio",
+                newsletterTitle: "Avvisi & Bollettino Legale",
+                newsletterSubtitle: "Iscriviti per ricevere aggiornamenti legali",
+                btnSubscribe: "Iscriviti",
+                footerDesc: "Studio legale specializzato nell'offrire servizi giuridici di alto livello per società, istituzioni e privati.",
+                workHours: "Lun - Ven: 09:00 - 18:00",
+                quickLinksTitle: "Link Rapidi",
+                linkNotices: "Avvisi Legali",
+                linkBulletins: "Bollettini & Pubblicazioni",
+                privacyPolicy: "Informativa sulla Privacy",
+                copyright: "© 2026 Grykshi & Partners. Tutti i diritti riservati.",
+                footerLocation: "Studio Legale • Tirana, Albania"
+            }
+        };
+
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+
+            document.documentElement.lang = lang;
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.flag-btn').forEach(btn => {
+                btn.classList.remove('active-lang');
+            });
+            const activeBtn = document.getElementById(`btn-${lang}`);
+            if (activeBtn) activeBtn.classList.add('active-lang');
+        }
+    </script>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
